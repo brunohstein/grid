@@ -61,3 +61,25 @@ The only variable that you need to define is `$grid-gutter`.
 Its default value is 20px. It is best practice to define
 variables for container's maximum width and margin, so you
 mantain consistency across your entire project.
+
+### Two cents on responsiveness
+
+This grid works well with `rem` units on gutter, margin and
+max-width sizes. You can also easily break lines and
+rearrange columns using media queries:
+
+    .products-list {
+      @include container();
+
+      @media '(min-width: 1024px)' {
+        @include columns('product', 1, 3);
+      }
+
+      @media '(min-width: 586px) and (max-width: 1024px)' {
+        @include columns('product', 1, 2);
+      }
+
+      @media '(max-width: 586px)' {
+        @include columns('product', 1, 1);
+      }
+    }
