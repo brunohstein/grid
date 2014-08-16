@@ -5,7 +5,7 @@ Just download and import `grid.scss` in your main stylesheet.
 ### How it works
 
 This grid provides you three mixins to help you positioning
-the elements of your page:
+the elements of your page.
 
 - `container($margin: null, $max-width: null)`: creates a wrapper for the elements inside of it. By default
 it fills the full width of the page.
@@ -83,3 +83,10 @@ rearrange columns using media queries:
         @include columns('product', 1, 1);
       }
     }
+
+## Browser support
+
+The width of columns is calculated using the `calc()`
+function of CSS. It is supported in IE 9+, Firefox,
+Chrome, Safari, Opera, iOS Safari 6.0+ and Android Browser
+4.4+. It is not supported in Opera Mini.
