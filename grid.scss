@@ -89,16 +89,20 @@ $grid-max-width: 1176px;
     @include column($size, $space);
     margin-bottom: $grid-gutter;
 
-    &:last-of-type {
-      margin-right: 0;
-    }
-
     &:nth-child(#{$space / $size}n) {
       margin-right: 0;
     }
 
     &:nth-last-child(-n + #{$space}) {
       margin-bottom: 0;
+    }
+
+    $coefficient: $space / $size;
+
+    @if round($coefficient) != $coefficient {
+      &:last-of-type {
+        margin-right: $grid-gutter;
+      }
     }
   }
 }

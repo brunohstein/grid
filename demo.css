@@ -112,8 +112,6 @@ h1 {
     margin-bottom: 20px; }
     .equal-columns-container .column:last-of-type {
       margin-right: 0; }
-    .equal-columns-container .column:last-of-type {
-      margin-right: 0; }
     .equal-columns-container .column:nth-child(12n) {
       margin-right: 0; }
     .equal-columns-container .column:nth-last-child(-n + 12) {
@@ -142,8 +140,6 @@ h1 {
       margin-bottom: 20px; }
       .equal-columns-with-media-queries-container .column:last-of-type {
         margin-right: 0; }
-      .equal-columns-with-media-queries-container .column:last-of-type {
-        margin-right: 0; }
       .equal-columns-with-media-queries-container .column:nth-child(12n) {
         margin-right: 0; }
       .equal-columns-with-media-queries-container .column:nth-last-child(-n + 12) {
@@ -160,8 +156,6 @@ h1 {
       margin-bottom: 20px; }
       .equal-columns-with-media-queries-container .column:last-of-type {
         margin-right: 0; }
-      .equal-columns-with-media-queries-container .column:last-of-type {
-        margin-right: 0; }
       .equal-columns-with-media-queries-container .column:nth-child(6n) {
         margin-right: 0; }
       .equal-columns-with-media-queries-container .column:nth-last-child(-n + 6) {
@@ -176,8 +170,6 @@ h1 {
       margin-right: 20px;
       font-size: 1rem;
       margin-bottom: 20px; }
-      .equal-columns-with-media-queries-container .column:last-of-type {
-        margin-right: 0; }
       .equal-columns-with-media-queries-container .column:last-of-type {
         margin-right: 0; }
       .equal-columns-with-media-queries-container .column:nth-child(2n) {
