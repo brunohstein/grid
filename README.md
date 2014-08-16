@@ -4,11 +4,14 @@ Just download and import `grid.scss` in your main stylesheet.
 
 ### How it works
 
+Demo: http://brunohstein.github.io/grid
+
 This grid provides you three mixins to help you positioning
 the elements of your page.
 
-- `container($margin: null, $max-width: null)`: creates a wrapper for the elements inside of it. By default
-it fills the full width of the page.
+- `container($margin: null, $max-width: null)`: creates a
+wrapper for the elements inside of it. By default it
+fills the full width of the page.
 
   ##### Parameters:
 
