@@ -4,11 +4,10 @@ Just download and import `grid.scss` in your main stylesheet.
 
 ### How it works
 
-This grid provides you with three mixins to help you
-positioning the elements of your page:
+This grid provides you three mixins to help you positioning
+the elements of your page:
 
-- ##### `container($margin: null, $max-width: null)`:
-Creates a wrapper for the elements inside of it. By default
+- `container($margin: null, $max-width: null)`: creates a wrapper for the elements inside of it. By default
 it fills the full width of the page.
 
   ##### Parameters:
@@ -24,8 +23,7 @@ it fills the full width of the page.
         @include container($margin: 20px, $max-width: 960px);
       }
 
-- ##### `column($size, $space)`:
-Creates a column.
+- `column($size, $space)`: creates a column.
 
   ##### Parameters:
 
@@ -40,8 +38,7 @@ Creates a column.
         @include column(1, 4);
       }
 
-- ##### `columns($class, $size, $space)`:
-Creates a group of equal-width columns inside a container.
+- `columns($class, $size, $space)`: creates a group of equal-width columns inside a container.
 
   ##### Parameters:
 
