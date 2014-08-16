@@ -6,6 +6,24 @@
 $grid-margin: 10px;
 $grid-gutter: 20px;
 $grid-max-width: 1176px;
+$base-font-size: 16px;
+
+/*
+ * GRID HELPERS
+ * Helpers classes
+ */
+
+.grid-align-right {
+  text-align: right;
+}
+
+.grid-align-left {
+  text-align: left;
+}
+
+.grid-align-center {
+  text-align: center;
+}
 
 /*
  * GRID MIXINS
@@ -44,7 +62,7 @@ $grid-max-width: 1176px;
   width: calc(((((100% - (#{$grid-gutter} * (#{$space} - 1))) * #{$size}) / #{$space})) + (#{$grid-gutter} * (#{$size} - 1)));
   width: calc(((((100% - (#{$grid-gutter} * (#{$space}))) * #{$size}) / #{$space})) + (#{$grid-gutter} * (#{$size} - 1)))\9;
   margin-right: $grid-gutter;
-  font-size: $base-size-desktop;
+  font-size: $base-font-size;
 
   &:last-of-type {
     margin-right: 0;

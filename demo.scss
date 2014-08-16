@@ -1,0 +1,67 @@
+@import 'grid';
+
+body {
+  font-family: 'Helvetica', 'Helvetica-Neue', 'Arial', 'sans-serif';
+  color: #555;
+  text-align: center;
+}
+
+h1 {
+  font-size: 18px;
+}
+
+.full-width-container {
+  @include container();
+}
+
+.column {
+  background: #e75877;
+  height: 40px;
+  line-height: 40px;
+  color: white;
+
+  &.column1-3 {
+    @include column(1, 3);
+  }
+
+  &.column2-3 {
+    @include column(2, 3);
+  }
+
+  &.column {
+    font-size: 12px;
+  }
+}
+
+.max-width-container {
+  @include container($max-width: 960px);
+}
+
+.margin-container {
+  @include container($margin: 40px);
+}
+
+.equal-columns-container {
+  @include container();
+  @include columns('column', 1, 12);
+
+  .column {
+    font-size: 12px;
+  }
+}
+
+.equal-columns-with-media-queries-container {
+  @include container();
+
+  @media (min-width: 1024px) {
+    @include columns('column', 1, 12);
+  }
+
+  @media (min-width: 586px) and (max-width: 1024px) {
+    @include columns('column', 1, 6);
+  }
+
+  @media (max-width: 586px) {
+    @include columns('column', 1, 2);
+  }
+}

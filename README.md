@@ -71,15 +71,15 @@ rearrange columns using media queries:
     .products-list {
       @include container();
 
-      @media '(min-width: 1024px)' {
+      @media (min-width: 1024px) {
         @include columns('product', 1, 3);
       }
 
-      @media '(min-width: 586px) and (max-width: 1024px)' {
+      @media (min-width: 586px) and (max-width: 1024px) {
         @include columns('product', 1, 2);
       }
 
-      @media '(max-width: 586px)' {
+      @media (max-width: 586px) {
         @include columns('product', 1, 1);
       }
     }
