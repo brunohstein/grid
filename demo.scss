@@ -1,13 +1,19 @@
 @import 'grid';
 
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: 'Helvetica', 'Helvetica-Neue', 'Arial', 'sans-serif';
-  color: #555;
   text-align: center;
 }
 
 h1 {
-  font-size: 18px;
+  font-size: 16px;
+  color: #333333;
+  margin: 20px 0;
 }
 
 .full-width-container {
@@ -15,9 +21,9 @@ h1 {
 }
 
 .column {
-  background: #e75877;
-  height: 40px;
-  line-height: 40px;
+  background: #e57877;
+  height: 150px;
+  line-height: 150px;
   color: white;
 
   &.column1-3 {
@@ -38,7 +44,7 @@ h1 {
 }
 
 .margin-container {
-  @include container($margin: 40px);
+  @include container($margin: 20px);
 }
 
 .equal-columns-container {

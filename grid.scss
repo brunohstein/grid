@@ -6,7 +6,6 @@
 $grid-margin: 10px;
 $grid-gutter: 20px;
 $grid-max-width: 1176px;
-$base-font-size: 16px;
 
 /*
  * GRID HELPERS
@@ -56,13 +55,16 @@ $base-font-size: 16px;
 }
 
 @mixin column($size, $space) {
+  $space: $space / $size;
+  $size: $size / $size;
+
   box-sizing: border-box;
   display: inline-block;
   vertical-align: top;
   width: calc(((((100% - (#{$grid-gutter} * (#{$space} - 1))) * #{$size}) / #{$space})) + (#{$grid-gutter} * (#{$size} - 1)));
   width: calc(((((100% - (#{$grid-gutter} * (#{$space}))) * #{$size}) / #{$space})) + (#{$grid-gutter} * (#{$size} - 1)))\9;
   margin-right: $grid-gutter;
-  font-size: $base-font-size;
+  font-size: 1rem;
 
   &:last-of-type {
     margin-right: 0;
@@ -80,6 +82,9 @@ $base-font-size: 16px;
 }
 
 @mixin columns($class, $size, $space) {
+  $space: $space / $size;
+  $size: $size / $size;
+
   .#{$class} {
     @include column($size, $space);
     margin-bottom: $grid-gutter;
