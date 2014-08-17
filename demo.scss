@@ -7,7 +7,6 @@
 
 body {
   font-family: 'Helvetica', 'Helvetica-Neue', 'Arial', 'sans-serif';
-  text-align: center;
 }
 
 h1 {
@@ -16,12 +15,58 @@ h1 {
   margin: 20px 0;
 }
 
+.container {
+  @include container($max-width: 1400px);
+  margin-top: 20px;
+}
+
+.sidebar {
+  @include column(1, 4);
+  text-align: left;
+
+  @media (max-width: 586px) {
+    @include column(1, 1);
+  }
+}
+
+.sidebar__item {
+  line-height: 20px;
+  padding: 0 20px 20px;
+  cursor: pointer;
+  color: #333333;
+  font-size: 13px;
+
+  &.is-active {
+    color: #999999;
+  }
+}
+
+.main {
+  @include column(3, 4);
+  text-align: center;
+  border-radius: 5px;
+  background: #f5f5f5;
+  overflow: hidden;
+
+  @media (max-width: 586px) {
+    @include column(1, 1);
+  }
+}
+
+.panel {
+  display: none;
+
+  &.is-active {
+    display: block;
+  }
+}
+
 .full-width-container {
   @include container();
 }
 
 .column {
-  background: #e57877;
+  background: #6BB6DA;
   height: 150px;
   line-height: 150px;
   color: white;
@@ -40,11 +85,11 @@ h1 {
 }
 
 .max-width-container {
-  @include container($max-width: 960px);
+  @include container($max-width: 500px);
 }
 
 .margin-container {
-  @include container($margin: 20px);
+  @include container($margin: 50px);
 }
 
 .equal-columns-container {

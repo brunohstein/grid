@@ -6,116 +6,129 @@
   <link rel="stylesheet" href="demo.css">
 </head>
 <body>
-  <h1>Full width container</h1>
+  <div class="container">
+    <ul class="sidebar">
+      <li class="sidebar__item is-active js-change-panel">Default</li>
+      <li class="sidebar__item js-change-panel">Container with maximum width</li>
+      <li class="sidebar__item js-change-panel">Container with margin</li>
+      <li class="sidebar__item js-change-panel">Equal width columns</li>
+      <li class="sidebar__item js-change-panel">Media queries</li>
+    </ul>
 
-  <div class="full-width-container">
-    <div class="column column1-3">1-3</div>
-    <div class="column column2-3">2-3</div>
+    <div class="main">
+      <div class="panel panel--default is-active js-panel">
+        <div class="full-width-container">
+          <div class="column column1-3">1-3</div>
+          <div class="column column2-3">2-3</div>
+        </div>
+
+        <div class="full-width-container">
+          <div class="column column1-3">1-3</div>
+          <div class="column column1-3">1-3</div>
+          <div class="column column1-3">1-3</div>
+        </div>
+
+        <div class="full-width-container">
+          <div class="column column2-3">2-3</div>
+          <div class="column column1-3">1-3</div>
+        </div>
+      </div>
+
+      <div class="panel panel--max-width js-panel">
+        <div class="max-width-container">
+          <div class="column column1-3">1-3</div>
+          <div class="column column2-3">2-3</div>
+        </div>
+
+        <div class="max-width-container">
+          <div class="column column1-3">1-3</div>
+          <div class="column column1-3">1-3</div>
+          <div class="column column1-3">1-3</div>
+        </div>
+
+        <div class="max-width-container">
+          <div class="column column2-3">2-3</div>
+          <div class="column column1-3">1-3</div>
+        </div>
+      </div>
+
+      <div class="panel panel--margin js-panel">
+        <div class="margin-container">
+          <div class="column column1-3">1-3</div>
+          <div class="column column2-3">2-3</div>
+        </div>
+
+        <div class="margin-container">
+          <div class="column column1-3">1-3</div>
+          <div class="column column1-3">1-3</div>
+          <div class="column column1-3">1-3</div>
+        </div>
+
+        <div class="margin-container">
+          <div class="column column2-3">2-3</div>
+          <div class="column column1-3">1-3</div>
+        </div>
+      </div>
+
+      <div class="panel panel--equal-width-columns js-panel">
+        <div class="equal-columns-container">
+          <div class="column">1-12</div>
+          <div class="column">1-12</div>
+          <div class="column">1-12</div>
+          <div class="column">1-12</div>
+          <div class="column">1-12</div>
+          <div class="column">1-12</div>
+          <div class="column">1-12</div>
+          <div class="column">1-12</div>
+          <div class="column">1-12</div>
+          <div class="column">1-12</div>
+          <div class="column">1-12</div>
+          <div class="column">1-12</div>
+          <div class="column">1-12</div>
+          <div class="column">1-12</div>
+          <div class="column">1-12</div>
+          <div class="column">1-12</div>
+          <div class="column">1-12</div>
+          <div class="column">1-12</div>
+          <div class="column">1-12</div>
+          <div class="column">1-12</div>
+          <div class="column">1-12</div>
+          <div class="column">1-12</div>
+          <div class="column">1-12</div>
+          <div class="column">1-12</div>
+        </div>
+      </div>
+
+      <div class="panel panel--media-queries js-panel">
+        <div class="equal-columns-with-media-queries-container">
+          <div class="column"></div>
+          <div class="column"></div>
+          <div class="column"></div>
+          <div class="column"></div>
+          <div class="column"></div>
+          <div class="column"></div>
+          <div class="column"></div>
+          <div class="column"></div>
+          <div class="column"></div>
+          <div class="column"></div>
+          <div class="column"></div>
+          <div class="column"></div>
+          <div class="column"></div>
+          <div class="column"></div>
+          <div class="column"></div>
+          <div class="column"></div>
+          <div class="column"></div>
+          <div class="column"></div>
+          <div class="column"></div>
+          <div class="column"></div>
+          <div class="column"></div>
+          <div class="column"></div>
+          <div class="column"></div>
+          <div class="column"></div>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <div class="full-width-container">
-    <div class="column column1-3">1-3</div>
-    <div class="column column1-3">1-3</div>
-    <div class="column column1-3">1-3</div>
-  </div>
-
-  <div class="full-width-container">
-    <div class="column column2-3">2-3</div>
-    <div class="column column1-3">1-3</div>
-  </div>
-
-  <h1>Maximum width defined container</h1>
-
-  <div class="max-width-container">
-    <div class="column column1-3">1-3</div>
-    <div class="column column2-3">2-3</div>
-  </div>
-
-  <div class="max-width-container">
-    <div class="column column1-3">1-3</div>
-    <div class="column column1-3">1-3</div>
-    <div class="column column1-3">1-3</div>
-  </div>
-
-  <div class="max-width-container">
-    <div class="column column2-3">2-3</div>
-    <div class="column column1-3">1-3</div>
-  </div>
-
-  <h1>Margin defined container</h1>
-
-  <div class="margin-container">
-    <div class="column column1-3">1-3</div>
-    <div class="column column2-3">2-3</div>
-  </div>
-
-  <div class="margin-container">
-    <div class="column column1-3">1-3</div>
-    <div class="column column1-3">1-3</div>
-    <div class="column column1-3">1-3</div>
-  </div>
-
-  <div class="margin-container">
-    <div class="column column2-3">2-3</div>
-    <div class="column column1-3">1-3</div>
-  </div>
-
-  <h1>Equal width columns</h1>
-
-  <div class="equal-columns-container">
-    <div class="column">1-12</div>
-    <div class="column">1-12</div>
-    <div class="column">1-12</div>
-    <div class="column">1-12</div>
-    <div class="column">1-12</div>
-    <div class="column">1-12</div>
-    <div class="column">1-12</div>
-    <div class="column">1-12</div>
-    <div class="column">1-12</div>
-    <div class="column">1-12</div>
-    <div class="column">1-12</div>
-    <div class="column">1-12</div>
-    <div class="column">1-12</div>
-    <div class="column">1-12</div>
-    <div class="column">1-12</div>
-    <div class="column">1-12</div>
-    <div class="column">1-12</div>
-    <div class="column">1-12</div>
-    <div class="column">1-12</div>
-    <div class="column">1-12</div>
-    <div class="column">1-12</div>
-    <div class="column">1-12</div>
-    <div class="column">1-12</div>
-    <div class="column">1-12</div>
-  </div>
-
-  <h1>Equal width columns with media queries</h1>
-
-  <div class="equal-columns-with-media-queries-container">
-    <div class="column"></div>
-    <div class="column"></div>
-    <div class="column"></div>
-    <div class="column"></div>
-    <div class="column"></div>
-    <div class="column"></div>
-    <div class="column"></div>
-    <div class="column"></div>
-    <div class="column"></div>
-    <div class="column"></div>
-    <div class="column"></div>
-    <div class="column"></div>
-    <div class="column"></div>
-    <div class="column"></div>
-    <div class="column"></div>
-    <div class="column"></div>
-    <div class="column"></div>
-    <div class="column"></div>
-    <div class="column"></div>
-    <div class="column"></div>
-    <div class="column"></div>
-    <div class="column"></div>
-    <div class="column"></div>
-    <div class="column"></div>
-  </div>
+  <script src="demo.js"></script>
 </body>
 </html>
