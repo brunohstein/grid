@@ -48,7 +48,6 @@ h1 {
 .main {
   @include column(3, 4);
   text-align: center;
-  background: #f5f5f5;
   overflow: hidden;
 
   @media (max-width: 586px) {
