@@ -1,4 +1,43 @@
 /*
+ * HELPER
+ * Properties with REM and PX fallback
+ */
+
+@mixin rem($property, $values, $base: $base-size-desktop) {
+  $px: ();
+  $rem: ();
+
+  @each $value in $values {
+    @if $value == 0 or $value == auto {
+      $px: append($px, $value);
+      $rem: append($rem, $value);
+    }
+
+    @else {
+      $unit: unit($value);
+      $val: parseInt($value);
+
+      @if $unit == "px" {
+        $px: append($px, $value);
+        $rem: append($rem, ($val / parseInt($base) + rem));
+      }
+
+      @if $unit == "rem" {
+        $px: append($px, ($val * parseInt($base) + px));
+        $rem: append($rem, $value);
+      }
+    }
+  }
+
+  @if $px == $rem {
+    #{$property}: $px;
+  } @else {
+    #{$property}: $px;
+    #{$property}: $rem;
+  }
+}
+
+/*
  * GRID SIZES
  * Change these variables for customization
  */
@@ -31,14 +70,14 @@ $grid-max-width: 1176px;
 
 @mixin container($margin: null, $max-width: null) {
   @if $margin != null {
-    padding: 0 $margin;
+    @include rem(padding, 0 $margin);
   }
 
   @if $max-width != null {
     @if $margin != null {
-      max-width: calc(#{$max-width} + (#{$margin} * 2));
+      @include rem(max-width, calc(#{$max-width} + (#{$margin} * 2)));
     } @else {
-      max-width: $max-width;
+      @include rem(max-width, $max-width);
     }
   }
 
@@ -46,7 +85,7 @@ $grid-max-width: 1176px;
   margin-right: auto;
   box-sizing: border-box;
   font-size: 0;
-  margin-bottom: $grid-gutter;
+  @include rem(margin-bottom, $grid-gutter);
   display: block;
 
   &:last-of-type {
@@ -63,7 +102,7 @@ $grid-max-width: 1176px;
   vertical-align: top;
   width: calc(((((100% - (#{$grid-gutter} * (#{$space} - 1))) * #{$size}) / #{$space})) + (#{$grid-gutter} * (#{$size} - 1)));
   width: calc(((((100% - (#{$grid-gutter} * (#{$space}))) * #{$size}) / #{$space})) + (#{$grid-gutter} * (#{$size} - 1)))\9;
-  margin-right: $grid-gutter;
+  @include rem(margin-right, $grid-gutter);
   font-size: 1rem;
 
   &:last-of-type {
@@ -73,7 +112,7 @@ $grid-max-width: 1176px;
   @if $size == $space {
     width: 100%;
     margin-right: 0;
-    margin-bottom: $grid-gutter;
+    @include rem(margin-bottom, $grid-gutter);
 
     &:last-of-type {
       margin-bottom: 0;
@@ -87,7 +126,7 @@ $grid-max-width: 1176px;
 
   .#{$class} {
     @include column($size, $space);
-    margin-bottom: $grid-gutter;
+    @include rem(margin-bottom, $grid-gutter);
 
     &:nth-child(#{$space / $size}n) {
       margin-right: 0;
@@ -101,7 +140,7 @@ $grid-max-width: 1176px;
 
     @if round($coefficient) != $coefficient {
       &:last-of-type {
-        margin-right: $grid-gutter;
+        @include rem(margin-right, $grid-gutter);
       }
     }
   }
