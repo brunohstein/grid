@@ -11,9 +11,12 @@
     <ul class="sidebar">
       <li class="sidebar__item is-active js-change-panel">Default</li>
       <li class="sidebar__item js-change-panel">Container with maximum width</li>
+      <li class="sidebar__item js-change-panel">Container with minimum width</li>
       <li class="sidebar__item js-change-panel">Container with margin</li>
       <li class="sidebar__item js-change-panel">Equal width columns</li>
       <li class="sidebar__item js-change-panel">Media queries</li>
+      <li class="sidebar__item js-change-panel">Nested</li>
+      <li class="sidebar__item js-change-panel">Space between</li>
     </ul>
 
     <div class="main">
@@ -48,6 +51,24 @@
         </div>
 
         <div class="max-width-container">
+          <div class="column column2-3"></div>
+          <div class="column column1-3"></div>
+        </div>
+      </div>
+
+      <div class="panel panel--min-width js-panel">
+        <div class="min-width-container">
+          <div class="column column1-3"></div>
+          <div class="column column2-3"></div>
+        </div>
+
+        <div class="min-width-container">
+          <div class="column column1-3"></div>
+          <div class="column column1-3"></div>
+          <div class="column column1-3"></div>
+        </div>
+
+        <div class="min-width-container">
           <div class="column column2-3"></div>
           <div class="column column1-3"></div>
         </div>
@@ -128,9 +149,37 @@
           <div class="column"></div>
         </div>
       </div>
+
+      <div class="panel panel--nested js-panel">
+        <div class="nested-container">
+          <div class="column column1-2">
+            <div class="nested-container">
+              <div class="column column1-2"></div>
+              <div class="column column1-2"></div>
+            </div>
+          </div>
+          <div class="column column1-2">
+            <div class="nested-container">
+              <div class="column column1-2"></div>
+              <div class="column column1-2"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel panel--space-between js-panel">
+        <div class="space-between-container">
+          <div class="column column1-3">
+          </div>
+          <div class="column column1-3">
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="demo.js"></script>
 </body>
 </html>

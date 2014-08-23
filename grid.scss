@@ -5,9 +5,23 @@
  */
 
 /*
+ * GRID SIZES
+ * Change these variables for customization
+ */
+
+$grid-margin: 10px;
+$grid-gutter: 20px;
+$grid-max-width: 1176px;
+$base-size-desktop: 16px;
+
+/*
  * HELPER
  * Properties with REM and PX fallback
  */
+
+@function parseInt($n) {
+  @return $n / ($n * 0 + 1);
+}
 
 @mixin rem($property, $values, $base: $base-size-desktop) {
   $px: ();
@@ -44,47 +58,21 @@
 }
 
 /*
- * GRID SIZES
- * Change these variables for customization
- */
-
-$grid-margin: 10px;
-$grid-gutter: 20px;
-$grid-max-width: 1176px;
-
-/*
- * GRID HELPERS
- * Helpers classes
- */
-
-.grid-align-right {
-  text-align: right;
-}
-
-.grid-align-left {
-  text-align: left;
-}
-
-.grid-align-center {
-  text-align: center;
-}
-
-/*
  * GRID MIXINS
  * You don't need to touch this
  */
 
-@mixin container($margin: null, $max-width: null) {
+@mixin container($margin: null, $max-width: null, $min-width: null, $align: null) {
   @if $margin != null {
     @include rem(padding, 0 $margin);
   }
 
   @if $max-width != null {
-    @if $margin != null {
-      @include rem(max-width, calc(#{$max-width} + (#{$margin} * 2)));
-    } @else {
-      @include rem(max-width, $max-width);
-    }
+    @include rem(max-width, $max-width);
+  }
+
+  @if $min-width != null {
+    @include rem(min-width, $min-width);
   }
 
   margin-left: auto;
@@ -97,9 +85,32 @@ $grid-max-width: 1176px;
   &:last-of-type {
     margin-bottom: 0;
   }
+
+  @if $align == justify {
+    text-align: justify;
+
+    &::after {
+      content: '';
+      height: 0;
+      display: inline-block;
+      width: 100%;
+    }
+  }
+
+  @if $align == left {
+    text-align: left;
+  }
+
+  @if $align == right {
+    text-align: right;
+  }
 }
 
-@mixin column($size, $space) {
+@mixin column($size, $space, $gap: null) {
+  @if $gap != null {
+    $gap: $gap / $size;
+  }
+
   $space: $space / $size;
   $size: $size / $size;
 
@@ -150,4 +161,25 @@ $grid-max-width: 1176px;
       }
     }
   }
+}
+
+/*
+ * GRID HELPERS
+ * Helpers classes
+ */
+
+.grid-align-right {
+  text-align: right;
+}
+
+.grid-align-left {
+  text-align: left;
+}
+
+.grid-align-center {
+  text-align: center;
+}
+
+.grid-container {
+  @include container();
 }

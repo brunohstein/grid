@@ -1,6 +1,19 @@
 /*
+ * GRID
+ * Author: Bruno Stein
+ * Github: https://github.com/brunohstein/grid
+ */
+/*
  * GRID SIZES
  * Change these variables for customization
+ */
+/*
+ * HELPER
+ * Properties with REM and PX fallback
+ */
+/*
+ * GRID MIXINS
+ * You don't need to touch this
  */
 /*
  * GRID HELPERS
@@ -15,10 +28,17 @@
 .grid-align-center {
   text-align: center; }
 
-/*
- * GRID MIXINS
- * You don't need to touch this
- */
+.grid-container {
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+  font-size: 0;
+  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
+  display: block; }
+  .grid-container:last-of-type {
+    margin-bottom: 0; }
+
 * {
   margin: 0;
   padding: 0; }
@@ -33,11 +53,13 @@ h1 {
 
 .container {
   max-width: 1400px;
+  max-width: 87.5rem;
   margin-left: auto;
   margin-right: auto;
   box-sizing: border-box;
   font-size: 0;
   margin-bottom: 20px;
+  margin-bottom: 1.25rem;
   display: block;
   margin-top: 20px; }
   .container:last-of-type {
@@ -50,6 +72,7 @@ h1 {
   width: calc(((((100% - (20px * (4 - 1))) * 1) / 4)) + (20px * (1 - 1)));
   width: calc(((((100% - (20px * (4))) * 1) / 4)) + (20px * (1 - 1))) \9;
   margin-right: 20px;
+  margin-right: 1.25rem;
   font-size: 1rem;
   text-align: left; }
   .sidebar:last-of-type {
@@ -62,10 +85,12 @@ h1 {
       width: calc(((((100% - (20px * (1 - 1))) * 1) / 1)) + (20px * (1 - 1)));
       width: calc(((((100% - (20px * (1))) * 1) / 1)) + (20px * (1 - 1))) \9;
       margin-right: 20px;
+      margin-right: 1.25rem;
       font-size: 1rem;
       width: 100%;
       margin-right: 0;
-      margin-bottom: 20px; }
+      margin-bottom: 20px;
+      margin-bottom: 1.25rem; }
       .sidebar:last-of-type {
         margin-right: 0; }
       .sidebar:last-of-type {
@@ -90,10 +115,10 @@ h1 {
   width: calc(((((100% - (20px * (1.33333 - 1))) * 1) / 1.33333)) + (20px * (1 - 1)));
   width: calc(((((100% - (20px * (1.33333))) * 1) / 1.33333)) + (20px * (1 - 1))) \9;
   margin-right: 20px;
+  margin-right: 1.25rem;
   font-size: 1rem;
   text-align: center;
-  background: #f5f5f5;
-  overflow: hidden; }
+  background: #fafafa; }
   .main:last-of-type {
     margin-right: 0; }
   @media (max-width: 586px) {
@@ -104,10 +129,12 @@ h1 {
       width: calc(((((100% - (20px * (1 - 1))) * 1) / 1)) + (20px * (1 - 1)));
       width: calc(((((100% - (20px * (1))) * 1) / 1)) + (20px * (1 - 1))) \9;
       margin-right: 20px;
+      margin-right: 1.25rem;
       font-size: 1rem;
       width: 100%;
       margin-right: 0;
-      margin-bottom: 20px; }
+      margin-bottom: 20px;
+      margin-bottom: 1.25rem; }
       .main:last-of-type {
         margin-right: 0; }
       .main:last-of-type {
@@ -124,6 +151,7 @@ h1 {
   box-sizing: border-box;
   font-size: 0;
   margin-bottom: 20px;
+  margin-bottom: 1.25rem;
   display: block; }
   .full-width-container:last-of-type {
     margin-bottom: 0; }
@@ -133,6 +161,28 @@ h1 {
   height: 150px;
   line-height: 150px;
   color: white; }
+  .column.column-gap1-3 {
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: top;
+    width: calc(((((100% - (20px * (3 - 1))) * 1) / 3)) + (20px * (1 - 1)));
+    width: calc(((((100% - (20px * (3))) * 1) / 3)) + (20px * (1 - 1))) \9;
+    margin-right: 20px;
+    margin-right: 1.25rem;
+    font-size: 1rem; }
+    .column.column-gap1-3:last-of-type {
+      margin-right: 0; }
+  .column.column1-2 {
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: top;
+    width: calc(((((100% - (20px * (2 - 1))) * 1) / 2)) + (20px * (1 - 1)));
+    width: calc(((((100% - (20px * (2))) * 1) / 2)) + (20px * (1 - 1))) \9;
+    margin-right: 20px;
+    margin-right: 1.25rem;
+    font-size: 1rem; }
+    .column.column1-2:last-of-type {
+      margin-right: 0; }
   .column.column1-3 {
     box-sizing: border-box;
     display: inline-block;
@@ -140,6 +190,7 @@ h1 {
     width: calc(((((100% - (20px * (3 - 1))) * 1) / 3)) + (20px * (1 - 1)));
     width: calc(((((100% - (20px * (3))) * 1) / 3)) + (20px * (1 - 1))) \9;
     margin-right: 20px;
+    margin-right: 1.25rem;
     font-size: 1rem; }
     .column.column1-3:last-of-type {
       margin-right: 0; }
@@ -150,6 +201,7 @@ h1 {
     width: calc(((((100% - (20px * (1.5 - 1))) * 1) / 1.5)) + (20px * (1 - 1)));
     width: calc(((((100% - (20px * (1.5))) * 1) / 1.5)) + (20px * (1 - 1))) \9;
     margin-right: 20px;
+    margin-right: 1.25rem;
     font-size: 1rem; }
     .column.column2-3:last-of-type {
       margin-right: 0; }
@@ -157,23 +209,40 @@ h1 {
     font-size: 12px; }
 
 .max-width-container {
-  max-width: 500px;
+  max-width: 600px;
+  max-width: 37.5rem;
   margin-left: auto;
   margin-right: auto;
   box-sizing: border-box;
   font-size: 0;
   margin-bottom: 20px;
+  margin-bottom: 1.25rem;
   display: block; }
   .max-width-container:last-of-type {
     margin-bottom: 0; }
 
-.margin-container {
-  padding: 0 50px;
+.min-width-container {
+  min-width: 600px;
+  min-width: 37.5rem;
   margin-left: auto;
   margin-right: auto;
   box-sizing: border-box;
   font-size: 0;
   margin-bottom: 20px;
+  margin-bottom: 1.25rem;
+  display: block; }
+  .min-width-container:last-of-type {
+    margin-bottom: 0; }
+
+.margin-container {
+  padding: 0 50px;
+  padding: 0 3.125rem;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+  font-size: 0;
+  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
   display: block; }
   .margin-container:last-of-type {
     margin-bottom: 0; }
@@ -184,6 +253,7 @@ h1 {
   box-sizing: border-box;
   font-size: 0;
   margin-bottom: 20px;
+  margin-bottom: 1.25rem;
   display: block; }
   .equal-columns-container:last-of-type {
     margin-bottom: 0; }
@@ -194,8 +264,10 @@ h1 {
     width: calc(((((100% - (20px * (12 - 1))) * 1) / 12)) + (20px * (1 - 1)));
     width: calc(((((100% - (20px * (12))) * 1) / 12)) + (20px * (1 - 1))) \9;
     margin-right: 20px;
+    margin-right: 1.25rem;
     font-size: 1rem;
-    margin-bottom: 20px; }
+    margin-bottom: 20px;
+    margin-bottom: 1.25rem; }
     .equal-columns-container .column:last-of-type {
       margin-right: 0; }
     .equal-columns-container .column:nth-child(12n) {
@@ -211,6 +283,7 @@ h1 {
   box-sizing: border-box;
   font-size: 0;
   margin-bottom: 20px;
+  margin-bottom: 1.25rem;
   display: block; }
   .equal-columns-with-media-queries-container:last-of-type {
     margin-bottom: 0; }
@@ -222,8 +295,10 @@ h1 {
       width: calc(((((100% - (20px * (12 - 1))) * 1) / 12)) + (20px * (1 - 1)));
       width: calc(((((100% - (20px * (12))) * 1) / 12)) + (20px * (1 - 1))) \9;
       margin-right: 20px;
+      margin-right: 1.25rem;
       font-size: 1rem;
-      margin-bottom: 20px; }
+      margin-bottom: 20px;
+      margin-bottom: 1.25rem; }
       .equal-columns-with-media-queries-container .column:last-of-type {
         margin-right: 0; }
       .equal-columns-with-media-queries-container .column:nth-child(12n) {
@@ -238,8 +313,10 @@ h1 {
       width: calc(((((100% - (20px * (6 - 1))) * 1) / 6)) + (20px * (1 - 1)));
       width: calc(((((100% - (20px * (6))) * 1) / 6)) + (20px * (1 - 1))) \9;
       margin-right: 20px;
+      margin-right: 1.25rem;
       font-size: 1rem;
-      margin-bottom: 20px; }
+      margin-bottom: 20px;
+      margin-bottom: 1.25rem; }
       .equal-columns-with-media-queries-container .column:last-of-type {
         margin-right: 0; }
       .equal-columns-with-media-queries-container .column:nth-child(6n) {
@@ -254,11 +331,55 @@ h1 {
       width: calc(((((100% - (20px * (2 - 1))) * 1) / 2)) + (20px * (1 - 1)));
       width: calc(((((100% - (20px * (2))) * 1) / 2)) + (20px * (1 - 1))) \9;
       margin-right: 20px;
+      margin-right: 1.25rem;
       font-size: 1rem;
-      margin-bottom: 20px; }
+      margin-bottom: 20px;
+      margin-bottom: 1.25rem; }
       .equal-columns-with-media-queries-container .column:last-of-type {
         margin-right: 0; }
       .equal-columns-with-media-queries-container .column:nth-child(2n) {
         margin-right: 0; }
       .equal-columns-with-media-queries-container .column:nth-last-child(-n + 2) {
         margin-bottom: 0; } }
+
+.nested-container {
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+  font-size: 0;
+  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
+  display: block; }
+  .nested-container:last-of-type {
+    margin-bottom: 0; }
+  .nested-container .nested-container {
+    padding: 0 20px;
+    padding: 0 1.25rem;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+    font-size: 0;
+    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
+    display: block; }
+    .nested-container .nested-container:last-of-type {
+      margin-bottom: 0; }
+    .nested-container .nested-container .column {
+      background: rgba(0, 0, 0, 0.2); }
+
+.space-between-container {
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+  font-size: 0;
+  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
+  display: block;
+  text-align: justify; }
+  .space-between-container:last-of-type {
+    margin-bottom: 0; }
+  .space-between-container::after {
+    content: '';
+    height: 0;
+    display: inline-block;
+    width: 100%; }
