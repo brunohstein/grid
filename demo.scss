@@ -73,10 +73,6 @@ h1 {
   line-height: 150px;
   color: white;
 
-  &.column-gap1-3 {
-    @include column(1, 3, 1);
-  }
-
   &.column1-2 {
     @include column(1, 2);
   }
