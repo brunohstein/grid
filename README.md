@@ -98,6 +98,7 @@ Chrome, Safari, Opera, iOS Safari 6.0+ and Android Browser
 
 Documentation: container($align)
 Documentation: container($min-width)
+Documentation: $base-size-desktop
 Feature: column($gap)
 
 Inspired by Profound Grid.
