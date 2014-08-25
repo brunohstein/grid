@@ -135,6 +135,8 @@ $base-size-desktop: 16px;
       margin-bottom: 0;
     }
   }
+
+  transition: width 1s;
 }
 
 @mixin columns($class, $size, $space) {
