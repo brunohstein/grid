@@ -64,15 +64,27 @@ $base-size-desktop: 16px;
 
 @mixin container($margin: null, $max-width: null, $min-width: null, $align: null) {
   @if $margin != null {
-    @include rem(padding, 0 $margin);
+    @if unit($margin) == 'px' {
+      @include rem(padding, 0 $margin);
+    } @else {
+      padding: 0 $margin;
+    }
   }
 
   @if $max-width != null {
-    @include rem(max-width, $max-width);
+    @if unit($max-width) == 'px' {
+      @include rem(max-width, $max-width);
+    } @else {
+      max-width: $max-width;
+    }
   }
 
   @if $min-width != null {
-    @include rem(min-width, $min-width);
+    @if unit($min-width) == 'px' {
+      @include rem(min-width, $min-width);
+    } @else {
+      min-width: $min-width;
+    }
   }
 
   margin-left: auto;
