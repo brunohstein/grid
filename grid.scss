@@ -64,15 +64,27 @@ $base-size-desktop: 16px;
 
 @mixin container($margin: null, $max-width: null, $min-width: null, $align: null) {
   @if $margin != null {
-    @include rem(padding, 0 $margin);
+    @if unit($margin) == 'px' {
+      @include rem(padding, 0 $margin);
+    } @else {
+      padding: 0 $margin;
+    }
   }
 
   @if $max-width != null {
-    @include rem(max-width, $max-width);
+    @if unit($max-width) == 'px' {
+      @include rem(max-width, $max-width);
+    } @else {
+      max-width: $max-width;
+    }
   }
 
   @if $min-width != null {
-    @include rem(min-width, $min-width);
+    @if unit($min-width) == 'px' {
+      @include rem(min-width, $min-width);
+    } @else {
+      min-width: $min-width;
+    }
   }
 
   margin-left: auto;
@@ -88,6 +100,7 @@ $base-size-desktop: 16px;
 
   @if $align == justify {
     text-align: justify;
+    text-justify: distribute;
 
     &::after {
       content: '';
@@ -104,47 +117,48 @@ $base-size-desktop: 16px;
   @if $align == right {
     text-align: right;
   }
+
+  @if $align == center {
+    text-align: center;
+  }
 }
 
-@mixin column($size, $space, $gap: null) {
-  @if $gap != null {
-    $gap: $gap / $size;
-  }
+@mixin column($size: null, $space: null, $valign: top) {
+  @if $size != null and $space != null {
+    $space: $space / $size;
+    $size: $size / $size;
 
-  $space: $space / $size;
-  $size: $size / $size;
+    width: calc(((((100% - (#{$grid-gutter} * (#{$space} - 1))) * #{$size}) / #{$space})) + (#{$grid-gutter} * (#{$size} - 1)));
+    width: calc(((((100% - (#{$grid-gutter} * (#{$space}))) * #{$size}) / #{$space})) + (#{$grid-gutter} * (#{$size} - 1)))\9;
+    @include rem(margin-right, $grid-gutter);
 
-  box-sizing: border-box;
-  display: inline-block;
-  vertical-align: top;
-  width: calc(((((100% - (#{$grid-gutter} * (#{$space} - 1))) * #{$size}) / #{$space})) + (#{$grid-gutter} * (#{$size} - 1)));
-  width: calc(((((100% - (#{$grid-gutter} * (#{$space}))) * #{$size}) / #{$space})) + (#{$grid-gutter} * (#{$size} - 1)))\9;
-  @include rem(margin-right, $grid-gutter);
-  font-size: 1rem;
+    @if $size == $space {
+      width: 100%;
+      margin-right: 0;
+      @include rem(margin-bottom, $grid-gutter);
 
-  &:last-of-type {
-    margin-right: 0;
-  }
-
-  @if $size == $space {
-    width: 100%;
-    margin-right: 0;
-    @include rem(margin-bottom, $grid-gutter);
-
-    &:last-of-type {
-      margin-bottom: 0;
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
 
-  transition: width 1s;
+  box-sizing: border-box;
+  display: inline-block;
+  vertical-align: $valign;
+  font-size: 1rem;
+
+  &:last-child {
+    margin-right: 0;
+  }
 }
 
-@mixin columns($class, $size, $space) {
+@mixin columns($class, $size, $space, $valign: top) {
   $space: $space / $size;
   $size: $size / $size;
 
   .#{$class} {
-    @include column($size, $space);
+    @include column($size, $space, $valign: $valign);
     @include rem(margin-bottom, $grid-gutter);
 
     &:nth-child(#{$space / $size}n) {
@@ -153,6 +167,10 @@ $base-size-desktop: 16px;
 
     &:nth-last-child(-n + #{$space}) {
       margin-bottom: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
     }
 
     $coefficient: $space / $size;
