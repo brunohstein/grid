@@ -87,13 +87,6 @@ rearrange columns using media queries:
       }
     }
 
-## Browser support
-
-The width of columns is calculated using the `calc()`
-function of CSS. It is supported in IE 9+, Firefox,
-Chrome, Safari, Opera, iOS Safari 6.0+ and Android Browser
-4.4+. It is not supported in Opera Mini.
-
 ## To do
 
 Documentation: container($align)
